@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey, Ek Minute...</title>
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset & Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #555;
+        }
+
+        /* Main Card Container */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Typography */
+        h1 {
+            color: #ff8fa3;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .highlight {
+            color: #ff6b81;
+            font-weight: 600;
+        }
+
+        /* Intro List Styling */
+        .intro-list {
+            list-style: none;
+            text-align: left;
+            margin: 0 auto 30px auto;
+            max-width: 90%;
+        }
+
+        .intro-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .intro-list li::before {
+            content: '🌸';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.8rem;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
+            transition: all 0.3s ease;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 154, 158, 0.6);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Hidden Sections */
+        .hidden-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+            margin-top: 0;
+        }
+
+        .hidden-content.show {
+            max-height: 500px; /* Arbitrary large height */
+            opacity: 1;
+            margin-top: 20px;
+        }
+
+        /* Care Section Styling */
+        .care-section {
+            background-color: #fff0f3;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 1px solid #ffdde1;
+        }
+
+        /* Footer */
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: #888;
+        }
+
+        .big-heart {
+            font-size: 1.5rem;
+            color: #ff4757;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        /* Surprise Animation */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-heart {
+            font-size: 3rem;
+            animation: float 2s ease-in-out infinite;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            h1 { font-size: 1.6rem; }
+            p { font-size: 1rem; }
+            .container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hey, ek minute…</h1>
+
+        <!-- Intro Lines -->
+        <ul class="intro-list">
+            <li>Tu itni dukhi kyu hai?</li>
+            <li>Main hu na tere sath.</li>
+            <li>Kuch bhi dikkat ho to mujhe bata dio.</li>
+            <li>Sab kuch apne andar mat rakha kar.</li>
+            <li>Kabhi kabhi bas kisi ko sunne ki zarurat hoti hai… aur main hamesha sununga.</li>
+        </ul>
+
+        <!-- Exam Section -->
+        <button class="btn" onclick="toggleSection('examSection')">Exam kharab gaya?</button>
+        
+        <div id="examSection" class="hidden-content">
+            <p class="highlight">Exam bura hua to koi baat nahi.</p>
+            <p>I know tu ne apna best try kiya hoga.</p>
+            <p>Marks se kisi ki value decide nahi hoti.</p>
+            <p>Tu already bohot strong hai. 💪</p>
+        </div>
+
+        <!-- Care Section -->
+        <div class="care-section">
+            <p>Waise… periods bhi aane wale honge ya aa chuke honge na?</p>
+            <p>Mood off hona normal hai.</p>
+            <p>Please apna khayal rakh.</p>
+            <p>Aur yaad rakh… <span class="highlight">I care.</span></p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-text">
+            <p>Aur haan… agar kabhi bhi baat karni ho to kar lena.</p>
+            <p>You can tell me anything.</p>
+            <p class="highlight" style="font-size: 1.2rem;">"I'll always listen to you."</p>
+        </div>
+
+        <!-- Surprise Section -->
+        <div style="margin-top: 30px;">
+            <p>And here's a little gift from me ❤️</p>
+            <button class="btn" onclick="toggleSection('surpriseSection')">Click for a surprise</button>
+        </div>
+
+        <div id="surpriseSection" class="hidden-content">
+            <div class="floating-heart">🤗</div>
+            <p class="highlight">Sending you a virtual hug!</p>
+            <p>Smile please? 😊</p>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const element = document.getElementById(id);
+            // Toggle the 'show' class
+            element.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
